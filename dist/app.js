@@ -21,16 +21,26 @@ exports.openPuppeteer = openPuppeteer;
 function sendMessage(chat, message) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log(message);
+        const messages = message.split(',');
         const { page, browser } = yield (0, prepare_1.prepare)({ headless: false });
-        yield page.goto(`https://web.telegram.org/k/#@${chat}`);
-        yield page.waitForTimeout(4000);
+        yield page.goto(`https://web.telegram.org/k/#@${chat}`, { waitUntil: 'networkidle2' });
+        yield page.waitForTimeout(5000);
         const messageField = yield page.$('div.input-message-container');
-        yield (messageField === null || messageField === void 0 ? void 0 : messageField.click({ clickCount: 3 }));
-        yield (messageField === null || messageField === void 0 ? void 0 : messageField.type(message, { delay: 60 }));
-        const sendBtn = yield page.$('div.btn-send-container');
-        yield (sendBtn === null || sendBtn === void 0 ? void 0 : sendBtn.click({ clickCount: 1 }));
-        yield page.waitForTimeout(2000);
+        if (!messageField) {
+            return false;
+        }
+        yield messageField.click({ clickCount: 3 });
+        for (const m of messages) {
+            yield messageField.type(m.trim(), { delay: 60 });
+            const sendBtn = yield page.$('div.btn-send-container');
+            if (!sendBtn) {
+                return false;
+            }
+            yield sendBtn.click({ clickCount: 1 });
+            yield page.waitForTimeout(3000);
+        }
         yield browser.close();
+        return true;
     });
 }
 exports.sendMessage = sendMessage;
