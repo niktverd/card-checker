@@ -2,8 +2,6 @@
 import puppeteer from 'puppeteer';
 
 export async function prepare({headless = true, debug = false}) {
-    console.log("prepare.....");
-
     const args = ["--no-sandbox", "--disable-setuid-sandbox"];
 
     if (debug) {
@@ -16,8 +14,6 @@ export async function prepare({headless = true, debug = false}) {
         args,
         userDataDir: './userDataDir',
     });
-
-    console.log("browser launched.....");
 
     const page = await browser.newPage();
 

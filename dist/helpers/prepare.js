@@ -16,7 +16,6 @@ exports.prepare = void 0;
 const puppeteer_1 = __importDefault(require("puppeteer"));
 function prepare({ headless = true, debug = false }) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("prepare.....");
         const args = ["--no-sandbox", "--disable-setuid-sandbox"];
         if (debug) {
             args.push("--remote-debugging-port=9222");
@@ -27,7 +26,6 @@ function prepare({ headless = true, debug = false }) {
             args,
             userDataDir: './userDataDir',
         });
-        console.log("browser launched.....");
         const page = yield browser.newPage();
         yield page.setViewport({
             width: 1400,
