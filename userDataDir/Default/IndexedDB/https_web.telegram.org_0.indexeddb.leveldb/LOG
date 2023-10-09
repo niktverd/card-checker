@@ -1,0 +1,15 @@
+2022/11/04-13:43:56.475 d203 Reusing MANIFEST /Users/niktverd/Documents/code/nodejs/puppeteer/puppeteer-telegram/userDataDir/Default/IndexedDB/https_web.telegram.org_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/04-13:43:56.493 d203 Recovering log #51
+2022/11/04-13:43:56.528 d203 Reusing old log /Users/niktverd/Documents/code/nodejs/puppeteer/puppeteer-telegram/userDataDir/Default/IndexedDB/https_web.telegram.org_0.indexeddb.leveldb/000051.log 
+2022/11/04-14:45:05.809 f103 Level-0 table #56: started
+2022/11/04-14:45:05.848 f103 Level-0 table #56: 1045276 bytes OK
+2022/11/04-14:45:05.892 f103 Delete type=0 #51
+2022/11/04-14:45:05.913 f103 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2022/11/04-14:45:05.913 f103 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x05\x02\x01\x09\x009\x009\x009\x007\x002\x003\x008\x008\x008' @ 129610 : 1
+2022/11/04-14:45:05.913 f103 Compacting 1@1 + 1@2 files
+2022/11/04-14:45:05.974 f103 Generated table #57@1: 5129 keys, 703924 bytes
+2022/11/04-14:45:05.974 f103 Compacted 1@1 + 1@2 files => 703924 bytes
+2022/11/04-14:45:06.012 f103 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/11/04-14:45:06.014 f103 Delete type=2 #56
+2022/11/04-14:45:06.032 f103 Delete type=2 #53
+2022/11/04-14:45:06.033 f103 Manual compaction at level-1 from '\x00\x01\x05\x02\x01\x09\x009\x009\x009\x007\x002\x003\x008\x008\x008' @ 129610 : 1 .. (end); will stop at (end)
